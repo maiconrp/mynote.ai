@@ -143,10 +143,10 @@ const UseExamplesCarousel = () => {
   );
 
   return (
-    <section className="py-16 md:py-24 px-6 md:px-12 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+    <section className="py-20 md:py-28 px-8 md:px-16 bg-gray-50">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-20">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
             Como as Pessoas Usam a mynote.ia
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -158,10 +158,10 @@ const UseExamplesCarousel = () => {
           <CarouselContent>
             {examples.map((example, index) => (
               <CarouselItem key={index}>
-                <div className="p-1">
-                  <div className="bg-white p-6 md:p-8 rounded-xl border border-gray-100 shadow-md h-full">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="bg-blue-50 p-3 rounded-full">
+                <div className="p-2">
+                  <div className="bg-white p-8 md:p-10 rounded-xl border border-gray-100 shadow-md h-full">
+                    <div className="flex items-center gap-4 mb-8">
+                      <div className="bg-blue-50 p-4 rounded-full">
                         {example.icon}
                       </div>
                       <h3 className="text-xl font-bold text-gray-900">
@@ -169,7 +169,7 @@ const UseExamplesCarousel = () => {
                       </h3>
                     </div>
                     
-                    <div className="bg-[#e5f7f0] rounded-lg p-4 max-w-md mx-auto">
+                    <div className="bg-[#e5f7f0] rounded-lg p-5 max-w-md mx-auto">
                       {example.conversation.map((msg, i) => renderMessage(msg, i))}
                     </div>
                   </div>

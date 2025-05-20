@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 const FinalCTA = () => {
   return (
-    <section className="py-16 md:py-24 px-6 md:px-12 bg-gradient-to-br from-brand-blue to-blue-700 text-white relative overflow-hidden">
+    <section className="py-20 md:py-28 px-8 md:px-16 bg-gradient-to-br from-brand-blue to-blue-700 text-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-1/4 w-64 h-64 bg-white opacity-5 rounded-full"></div>
@@ -14,13 +14,13 @@ const FinalCTA = () => {
       </div>
       
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
           Transforme seu WhatsApp em uma <span className="text-brand-accent">Memória Digital Inteligente</span>
         </h2>
-        <p className="text-lg md:text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl mb-10 opacity-90 max-w-2xl mx-auto">
           Chega de perder arquivos importantes, links valiosos ou mensagens essenciais em conversas intermináveis. A mynote.ia organiza tudo para você.
         </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4 max-w-lg mx-auto">
+        <div className="flex flex-col sm:flex-row justify-center gap-5 max-w-lg mx-auto">
           <Button className="bg-white text-brand-blue hover:bg-gray-100 font-medium h-14 px-8 text-lg">
             Experimente mynote.ia Grátis
           </Button>

@@ -35,10 +35,10 @@ const Features = () => {
   ];
 
   return (
-    <section id="funcionalidades" className="py-16 md:py-24 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+    <section id="funcionalidades" className="py-20 md:py-28 px-8 md:px-16">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-20">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
             Recursos Poderosos que Transformam seu WhatsApp
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -46,11 +46,11 @@ const Features = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-x-8 gap-y-16">
+        <div className="grid md:grid-cols-2 gap-x-10 gap-y-16">
           {features.map((feature, index) => (
-            <div key={index} className="bg-white p-6 rounded-xl border border-gray-100 shadow-md hover:shadow-blue transition-all">
+            <div key={index} className="bg-white p-8 rounded-xl border border-gray-100 shadow-md hover:shadow-blue transition-all">
               <div className="flex gap-6 mb-4">
-                <div className="bg-blue-50 rounded-xl p-3 h-fit">
+                <div className="bg-blue-50 rounded-xl p-4 h-fit">
                   {feature.icon}
                 </div>
                 <div>
@@ -71,38 +71,38 @@ const Features = () => {
           ))}
         </div>
         
-        <div className="mt-20 bg-slate-50 rounded-2xl p-8 md:p-12">
-          <div className="flex flex-col md:flex-row items-center gap-10">
+        <div className="mt-24 bg-slate-50 rounded-2xl p-10 md:p-14">
+          <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
+              <h3 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">
                 Compatível com Todos os Tipos de Arquivo
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-8">
                 A mynote.ia entende e organiza virtualmente qualquer tipo de arquivo que você enviar pelo WhatsApp:
               </p>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
+              <div className="grid grid-cols-2 gap-6">
+                <div className="flex items-center gap-3 bg-white p-4 rounded-lg shadow-sm">
                   <FileText className="h-6 w-6 text-red-500" />
                   <div>
                     <p className="font-medium text-gray-800">Documentos</p>
                     <p className="text-xs text-gray-500">PDFs, DOCs, TXTs</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
+                <div className="flex items-center gap-3 bg-white p-4 rounded-lg shadow-sm">
                   <FileImage className="h-6 w-6 text-green-500" />
                   <div>
                     <p className="font-medium text-gray-800">Imagens</p>
                     <p className="text-xs text-gray-500">JPGs, PNGs, Screenshots</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
+                <div className="flex items-center gap-3 bg-white p-4 rounded-lg shadow-sm">
                   <FileAudio className="h-6 w-6 text-purple-500" />
                   <div>
                     <p className="font-medium text-gray-800">Áudios</p>
                     <p className="text-xs text-gray-500">Notas de voz, Gravações</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
+                <div className="flex items-center gap-3 bg-white p-4 rounded-lg shadow-sm">
                   <div className="bg-blue-500 h-6 w-6 rounded flex items-center justify-center text-white text-xs font-bold">
                     URL
                   </div>
@@ -118,7 +118,7 @@ const Features = () => {
                 <div className="bg-brand-blue p-4 text-white">
                   <h4 className="font-medium">Demonstração: Busca Inteligente</h4>
                 </div>
-                <div className="p-4 bg-[#e5f7f0] space-y-4">
+                <div className="p-5 bg-[#e5f7f0] space-y-4">
                   <div className="flex justify-end">
                     <div className="bg-white rounded-tl-lg rounded-bl-lg rounded-tr-lg p-3 max-w-[80%] shadow-sm">
                       <p className="text-sm text-gray-800">

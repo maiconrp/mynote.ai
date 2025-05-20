@@ -31,24 +31,24 @@ const UseCases = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 px-6 md:px-12 bg-blue-50">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+    <section className="py-20 md:py-28 px-8 md:px-16 bg-blue-50">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-20">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
             mynote.ia é Perfeita Para Você, Se Você é...
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {cases.map((useCase, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-xl border border-gray-100 shadow-md hover:shadow-blue transition-all"
+              className="bg-white p-10 rounded-xl border border-gray-100 shadow-md hover:shadow-blue transition-all"
             >
-              <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
+              <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mb-8 mx-auto">
                 {useCase.icon}
               </div>
-              <h3 className="text-xl font-bold mb-3 text-center text-gray-900">
+              <h3 className="text-xl font-bold mb-4 text-center text-gray-900">
                 {useCase.title}
               </h3>
               <p className="text-gray-600 text-center">{useCase.description}</p>
