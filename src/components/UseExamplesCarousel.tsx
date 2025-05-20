@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { 
   Carousel, 
@@ -15,7 +16,7 @@ const UseExamplesCarousel = () => {
 
   const examples = [
     {
-      title: "Armazenamento Inteligente",
+      title: "Armazenamento de PDFs",
       icon: <FileText className="h-8 w-8 text-red-500" />,
       conversation: [
         {
@@ -147,11 +148,11 @@ const UseExamplesCarousel = () => {
           <CarouselContent className="-ml-4 md:-ml-6">
             {examples.map((example, index) => (
               <CarouselItem key={index} className="pl-4 md:pl-6 basis-full md:basis-1/2 lg:basis-1/3">
-                <Card className={`bg-white p-6 md:p-8 rounded-xl border ${
+                <Card className={`bg-white p-6 md:p-8 rounded-xl border flex flex-col h-full ${
                   current === index 
                     ? "border-brand-blue shadow-lg scale-105 transition-all duration-300" 
                     : "border-gray-100 shadow-sm"
-                } h-full transition-all duration-300`}
+                } transition-all duration-300`}
                 >
                   <div className="flex items-center gap-4 mb-6">
                     <div className="bg-blue-50 p-3 rounded-full">
@@ -162,7 +163,7 @@ const UseExamplesCarousel = () => {
                     </h3>
                   </div>
                   
-                  <div className="bg-[#e5f7f0] rounded-lg p-4 max-w-md mx-auto h-[180px] flex flex-col justify-center">
+                  <div className="bg-[#e5f7f0] rounded-lg p-4 flex-grow flex flex-col justify-center h-[180px]">
                     {example.conversation.map((msg, i) => renderMessage(msg, i))}
                   </div>
                 </Card>
