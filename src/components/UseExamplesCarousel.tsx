@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { 
   Carousel, 
   CarouselContent, 
@@ -8,8 +8,12 @@ import {
   CarouselPrevious 
 } from "@/components/ui/carousel";
 import { FileText, FileImage, FileAudio, Search } from "lucide-react";
+import { Card } from "@/components/ui/card";
 
 const UseExamplesCarousel = () => {
+  const [api, setApi] = useState<any>();
+  const [current, setCurrent] = useState(0);
+
   const examples = [
     {
       title: "Armazenamento Inteligente de PDFs",
@@ -17,7 +21,7 @@ const UseExamplesCarousel = () => {
       conversation: [
         {
           user: true,
-          text: "Note, preciso guardar esse artigo científico pra minha pesquisa de mestrado",
+          text: "Oi Note, preciso guardar esse artigo científico pra minha pesquisa de mestrado",
           attachment: {
             type: "PDF",
             name: "artigo_neurociencia.pdf"
@@ -121,6 +125,19 @@ const UseExamplesCarousel = () => {
     }
   ];
 
+  useEffect(() => {
+    if (!api) return;
+    
+    const handleSelect = () => {
+      setCurrent(api.selectedScrollSnap());
+    };
+    
+    api.on("select", handleSelect);
+    return () => {
+      api.off("select", handleSelect);
+    };
+  }, [api]);
+
   const renderMessage = (msg: any, index: number) => (
     <div key={index} className={`flex ${msg.user ? "justify-end" : "justify-start"} mb-3`}>
       <div className={`bg-white ${msg.user ? "rounded-tl-lg rounded-bl-lg rounded-tr-lg" : "rounded-tr-lg rounded-br-lg rounded-bl-lg"} p-2 max-w-[80%] shadow-sm`}>
@@ -143,8 +160,8 @@ const UseExamplesCarousel = () => {
   );
 
   return (
-    <section className="py-20 md:py-28 px-8 md:px-16 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-24 md:py-32 px-8 md:px-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
             Como as Pessoas Usam a mynote.ia
@@ -154,32 +171,44 @@ const UseExamplesCarousel = () => {
           </p>
         </div>
 
-        <Carousel className="w-full max-w-5xl mx-auto">
-          <CarouselContent>
+        <Carousel 
+          className="w-full max-w-6xl mx-auto"
+          opts={{
+            align: "center",
+            loop: true,
+            skipSnaps: false,
+            slidesToScroll: 1,
+          }}
+          setApi={setApi}
+        >
+          <CarouselContent className="-ml-4 md:-ml-6">
             {examples.map((example, index) => (
-              <CarouselItem key={index}>
-                <div className="p-2">
-                  <div className="bg-white p-8 md:p-10 rounded-xl border border-gray-100 shadow-md h-full">
-                    <div className="flex items-center gap-4 mb-8">
-                      <div className="bg-blue-50 p-4 rounded-full">
-                        {example.icon}
-                      </div>
-                      <h3 className="text-xl font-bold text-gray-900">
-                        {example.title}
-                      </h3>
+              <CarouselItem key={index} className="pl-4 md:pl-6 md:basis-1/3 lg:basis-1/3">
+                <Card className={`bg-white p-6 md:p-8 rounded-xl border ${
+                  current === index 
+                    ? "border-brand-blue shadow-lg scale-105 transition-all duration-300" 
+                    : "border-gray-100 shadow-sm"
+                } h-full transition-all duration-300`}
+                >
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="bg-blue-50 p-3 rounded-full">
+                      {example.icon}
                     </div>
-                    
-                    <div className="bg-[#e5f7f0] rounded-lg p-5 max-w-md mx-auto">
-                      {example.conversation.map((msg, i) => renderMessage(msg, i))}
-                    </div>
+                    <h3 className="text-lg font-bold text-gray-900">
+                      {example.title}
+                    </h3>
                   </div>
-                </div>
+                  
+                  <div className="bg-[#e5f7f0] rounded-lg p-4 max-w-md mx-auto h-[250px] overflow-y-auto">
+                    {example.conversation.map((msg, i) => renderMessage(msg, i))}
+                  </div>
+                </Card>
               </CarouselItem>
             ))}
           </CarouselContent>
           <div className="hidden md:block">
-            <CarouselPrevious className="left-0" />
-            <CarouselNext className="right-0" />
+            <CarouselPrevious className="-left-12" />
+            <CarouselNext className="-right-12" />
           </div>
         </Carousel>
       </div>
