@@ -21,7 +21,7 @@ const UseExamplesCarousel = () => {
       conversation: [
         {
           user: true,
-          text: "Oi Note, preciso guardar esse artigo científico pra minha pesquisa de mestrado",
+          text: "Oi Note, preciso guardar esse artigo científico",
           attachment: {
             type: "PDF",
             name: "artigo_neurociencia.pdf"
@@ -29,15 +29,7 @@ const UseExamplesCarousel = () => {
         },
         {
           user: false,
-          text: "Guardado, Camila! 👍 Adicionei à sua pasta de pesquisa acadêmica. Quer que eu extraia os pontos principais?",
-        },
-        {
-          user: true,
-          text: "Sim, por favor! E me lembre dele na segunda-feira",
-        },
-        {
-          user: false,
-          text: "Claro! Principais pontos: estudo sobre neuroplasticidade em adultos, metodologia inovadora, resultados promissores para tratamentos cognitivos. Configurei um lembrete para segunda-feira às 9h.",
+          text: "Guardado, Camila! Adicionei à sua pasta de pesquisa acadêmica.",
         }
       ]
     },
@@ -47,7 +39,7 @@ const UseExamplesCarousel = () => {
       conversation: [
         {
           user: true,
-          text: "Oi Note, guarda essa receita de risoto que achei incrível",
+          text: "Oi Note, guarda essa receita de risoto",
           attachment: {
             type: "IMAGEM",
             name: "receita_risoto.jpg"
@@ -55,19 +47,7 @@ const UseExamplesCarousel = () => {
         },
         {
           user: false,
-          text: "Receita salva, Marcos! 🍲 Adicionei à sua coleção de receitas italianas. Já tem 8 receitas nessa categoria!",
-        },
-        {
-          user: true,
-          text: "Qual era aquela receita de massa que guardei mês passado?",
-        },
-        {
-          user: false,
-          text: "Encontrei 3 receitas de massa do mês passado. A mais recente é esta lasanha vegetariana:",
-          attachment: {
-            type: "IMAGEM",
-            name: "lasanha_vegetariana.jpg"
-          }
+          text: "Receita salva, Marcos! Adicionei à sua coleção de receitas italianas.",
         }
       ]
     },
@@ -77,7 +57,7 @@ const UseExamplesCarousel = () => {
       conversation: [
         {
           user: true,
-          text: "Note, guarda o contato dessa cliente que acabei de conhecer no evento",
+          text: "Note, guarda o contato dessa cliente",
           attachment: {
             type: "CONTATO",
             name: "Ana Ferreira - Marketing"
@@ -85,15 +65,7 @@ const UseExamplesCarousel = () => {
         },
         {
           user: false,
-          text: "Contato da Ana Ferreira salvo na categoria 'Clientes Potenciais'! Quer adicionar alguma nota sobre ela?",
-        },
-        {
-          user: true,
-          text: "Sim, anota que ela tem interesse nos serviços de consultoria digital e que devo enviar proposta até sexta",
-        },
-        {
-          user: false,
-          text: "Anotado! 📝 Também adicionei um lembrete para você enviar a proposta até sexta-feira. Deseja que eu prepare um modelo?",
+          text: "Contato da Ana Ferreira salvo na categoria 'Clientes Potenciais'!",
         }
       ]
     },
@@ -103,23 +75,15 @@ const UseExamplesCarousel = () => {
       conversation: [
         {
           user: true,
-          text: "Note, esse é o áudio da aula de hoje sobre psicologia do desenvolvimento",
+          text: "Note, esse é o áudio da aula de psicologia",
           attachment: {
             type: "ÁUDIO",
-            name: "aula_psicologia_25min.mp3"
+            name: "aula_psicologia.mp3"
           }
         },
         {
           user: false,
-          text: "Áudio recebido e catalogado em 'Estudos > Psicologia'! Com base no conteúdo, identifiquei que aborda teorias de Piaget e Vygotsky. Quer que eu faça um resumo dos principais pontos?",
-        },
-        {
-          user: true,
-          text: "Sim, faz um resumo curto pra mim",
-        },
-        {
-          user: false,
-          text: "📚 Resumo: A aula compara as teorias de Piaget (desenvolvimento por estágios) e Vygotsky (ênfase no contexto social). Pontos importantes: ZDP (Zona de Desenvolvimento Proximal), papel da mediação na aprendizagem, e diferenças na visão sobre linguagem e pensamento.",
+          text: "Áudio catalogado em 'Estudos > Psicologia'!",
         }
       ]
     }
@@ -199,7 +163,7 @@ const UseExamplesCarousel = () => {
                     </h3>
                   </div>
                   
-                  <div className="bg-[#e5f7f0] rounded-lg p-4 max-w-md mx-auto h-[250px] overflow-y-auto">
+                  <div className="bg-[#e5f7f0] rounded-lg p-4 max-w-md mx-auto h-[150px]">
                     {example.conversation.map((msg, i) => renderMessage(msg, i))}
                   </div>
                 </Card>
