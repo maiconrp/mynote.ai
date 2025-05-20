@@ -163,7 +163,7 @@ const UseExamplesCarousel = () => {
                     </h3>
                   </div>
                   
-                  <div className="bg-[#e5f7f0] rounded-lg p-4 max-w-md mx-auto h-[150px]">
+                  <div className="bg-[#e5f7f0] rounded-lg p-4 max-w-md mx-auto h-[180px]">
                     {example.conversation.map((msg, i) => renderMessage(msg, i))}
                   </div>
                 </Card>
