@@ -1,32 +1,36 @@
 
 import React from "react";
-import { Brain, Search, FolderOpen, Shield } from "lucide-react";
+import { Brain, Search, FolderOpen, Shield, FileText, FileImage, FileAudio } from "lucide-react";
 
 const Features = () => {
   const features = [
     {
       icon: <Brain className="h-8 w-8 text-brand-blue" />,
-      title: "Sua IA Pessoal que Entende Tudo",
+      title: "Inteligência Artificial que Realmente Entende Você",
       description:
-        "Envie qualquer coisa – de PDFs de estudo a comprovantes de pagamento e links de receitas. A mynote.ia não só guarda, mas tenta entender o contexto para facilitar sua busca depois.",
+        "Nossa IA avançada não apenas armazena, mas compreende o contexto dos seus arquivos. Ela analisa PDFs, reconhece imagens, transcreve áudios e extrai informações importantes para você encontrar tudo facilmente depois.",
+      pills: ["Compreensão de Contexto", "Análise de Documentos", "Extração de Informações"]
     },
     {
       icon: <Search className="h-8 w-8 text-brand-blue" />,
-      title: "Encontre Tudo com uma Simples Pergunta",
+      title: "Busca Conversacional em Linguagem Natural",
       description:
-        "Chega de rolar conversas infinitas ou procurar em pastas. Pergunte à mynote.ia em linguagem natural (ex: 'qual foi o último link de receita que mandei?') e tenha o que precisa na ponta dos dedos.",
+        "Chega de comandos complexos ou buscas frustradas. Converse com a mynote.ia como falaria com um amigo: "Cadê aquele documento de aluguel?", "Me mostra o link daquele restaurante italiano" ou "Quero ver a foto da reunião de ontem".",
+      pills: ["Perguntas em Linguagem Natural", "Busca Contextual", "Zero Esforço"]
     },
     {
       icon: <FolderOpen className="h-8 w-8 text-brand-blue" />,
-      title: "Organização Sem Estresse",
+      title: "Organização Automática e Inteligente",
       description:
-        "A mynote.ia tenta categorizar suas coisas automaticamente. Se preferir, você pode criar suas próprias 'pastas' ou adicionar 'tags' com comandos simples para uma organização ainda mais personalizada.",
+        "A mynote.ia categoriza automaticamente tudo que você envia. PDFs de trabalho vão para a pasta "Profissional", receitas para "Culinária", documentos para "Importantes". Você pode criar suas próprias categorias ou deixar que nossa IA faça isso por você.",
+      pills: ["Categorização Automática", "Pastas Personalizadas", "Tags Inteligentes"]
     },
     {
       icon: <Shield className="h-8 w-8 text-brand-blue" />,
-      title: "Seus Dados, Suas Regras",
+      title: "Privacidade e Segurança de Ponta a Ponta",
       description:
-        "Levamos sua privacidade a sério. Suas informações são armazenadas de forma segura, com criptografia, e você tem controle total sobre elas. Ninguém mais acessa seus dados.",
+        "Seus dados são exclusivamente seus. A mynote.ia utiliza criptografia avançada para proteger todas as suas informações. Você tem controle total sobre o que é armazenado e pode excluir qualquer coisa a qualquer momento.",
+      pills: ["Criptografia Avançada", "Controle Total", "Sem Compartilhamento de Dados"]
     },
   ];
 
@@ -35,80 +39,103 @@ const Features = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            Recursos Poderosos para Simplificar sua Vida Digital
+            Recursos Poderosos que Transformam seu WhatsApp
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            A mynote.ia foi projetada para resolver a bagunça de informações no seu WhatsApp.
+            A mynote.ia foi projetada para resolver o caos de informações e trazer ordem ao seu dia a dia digital.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-x-8 gap-y-16">
           {features.map((feature, index) => (
-            <div key={index} className="flex gap-6">
-              <div className="bg-blue-50 rounded-xl p-3 h-fit">
-                {feature.icon}
+            <div key={index} className="bg-white p-6 rounded-xl border border-gray-100 shadow-md hover:shadow-blue transition-all">
+              <div className="flex gap-6 mb-4">
+                <div className="bg-blue-50 rounded-xl p-3 h-fit">
+                  {feature.icon}
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-3 text-gray-900">
+                    {feature.title}
+                  </h3>
+                </div>
               </div>
-              <div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600">{feature.description}</p>
+              <p className="text-gray-600 mb-4">{feature.description}</p>
+              <div className="flex flex-wrap gap-2">
+                {feature.pills.map((pill, i) => (
+                  <span key={i} className="bg-blue-50 text-brand-blue text-xs font-medium px-3 py-1 rounded-full">
+                    {pill}
+                  </span>
+                ))}
               </div>
             </div>
           ))}
         </div>
         
         <div className="mt-20 bg-slate-50 rounded-2xl p-8 md:p-12">
-          <div className="flex flex-col md:flex-row gap-10">
+          <div className="flex flex-col md:flex-row items-center gap-10">
             <div className="md:w-1/2">
               <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
-                Interfaceveramente simples usando o WhatsApp que você já conhece
+                Compatível com Todos os Tipos de Arquivo
               </h3>
               <p className="text-gray-600 mb-6">
-                Não precisa baixar mais nenhum app ou aprender um novo sistema. A mynote.ia funciona diretamente no WhatsApp, que você já usa todos os dias.
+                A mynote.ia entende e organiza virtualmente qualquer tipo de arquivo que você enviar pelo WhatsApp:
               </p>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-3 text-gray-700">
-                  <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
+                  <FileText className="h-6 w-6 text-red-500" />
+                  <div>
+                    <p className="font-medium text-gray-800">Documentos</p>
+                    <p className="text-xs text-gray-500">PDFs, DOCs, TXTs</p>
                   </div>
-                  Sem downloads adicionais
-                </li>
-                <li className="flex items-center gap-3 text-gray-700">
-                  <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                </div>
+                <div className="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
+                  <FileImage className="h-6 w-6 text-green-500" />
+                  <div>
+                    <p className="font-medium text-gray-800">Imagens</p>
+                    <p className="text-xs text-gray-500">JPGs, PNGs, Screenshots</p>
                   </div>
-                  Interação natural por texto
-                </li>
-                <li className="flex items-center gap-3 text-gray-700">
-                  <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                </div>
+                <div className="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
+                  <FileAudio className="h-6 w-6 text-purple-500" />
+                  <div>
+                    <p className="font-medium text-gray-800">Áudios</p>
+                    <p className="text-xs text-gray-500">Notas de voz, Gravações</p>
                   </div>
-                  Compatível com todos os dispositivos
-                </li>
-              </ul>
+                </div>
+                <div className="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
+                  <div className="bg-blue-500 h-6 w-6 rounded flex items-center justify-center text-white text-xs font-bold">
+                    URL
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-800">Links & URLs</p>
+                    <p className="text-xs text-gray-500">Websites, Artigos, Videos</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="md:w-1/2 flex justify-center items-center">
-              <div className="w-64 border-8 border-gray-800 rounded-3xl p-1 bg-gray-800 shadow-lg">
-                <div className="bg-[#e5f7f0] rounded-2xl p-3 h-full">
-                  <div className="flex justify-end mb-3">
+            <div className="md:w-1/2">
+              <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
+                <div className="bg-brand-blue p-4 text-white">
+                  <h4 className="font-medium">Demonstração: Busca Inteligente</h4>
+                </div>
+                <div className="p-4 bg-[#e5f7f0] space-y-4">
+                  <div className="flex justify-end">
                     <div className="bg-white rounded-tl-lg rounded-bl-lg rounded-tr-lg p-3 max-w-[80%] shadow-sm">
-                      <p className="text-xs text-gray-800">
-                        Você pode me ajudar a organizar minhas receitas?
+                      <p className="text-sm text-gray-800">
+                        Ei Note, você tem aquele comprovante de pagamento do curso que fiz mês passado?
                       </p>
                     </div>
                   </div>
-                  <div className="flex justify-start mb-3">
+                  
+                  <div className="flex justify-start">
                     <div className="bg-white rounded-tr-lg rounded-br-lg rounded-bl-lg p-3 max-w-[80%] shadow-sm">
-                      <p className="text-xs text-gray-800">
-                        Claro, Lucas! Vou criar uma pasta "Receitas" para você. Sempre que enviar uma receita, vou guardá-la lá. Também pode me pedir para criar subcategorias como "Doces" ou "Salgados" se quiser! 😊
+                      <p className="text-sm text-gray-800">
+                        Sim, Juliana! Encontrei 2 comprovantes de pagamento do mês passado. Este é do curso de Design UX que você pagou dia 15:
                       </p>
+                      <div className="mt-2 p-2 bg-gray-50 rounded-md flex items-center">
+                        <div className="bg-red-500 text-white text-xs p-1 rounded">PDF</div>
+                        <span className="text-xs ml-2">recibo_curso_ux_design.pdf</span>
+                      </div>
                     </div>
                   </div>
                 </div>

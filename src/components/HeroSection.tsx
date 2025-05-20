@@ -13,7 +13,9 @@ const HeroSection = () => {
             <span className="text-brand-blue">finalmente organizado.</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-lg">
-            Envie qualquer arquivo, link, áudio ou mensagem para a mynote.ia. Nossa IA cataloga tudo, e você encontra com uma simples pergunta. Sem esforço, sem perder mais nada.
+            <strong className="text-brand-blue">Envie qualquer arquivo</strong> - PDFs, imagens, links, áudios, textos - para a mynote.ia. 
+            Nossa IA poderosa <strong>analisa, entende e cataloga tudo</strong>, 
+            e você encontra com uma simples pergunta em linguagem natural.
           </p>
           <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-2">
             <Button className="bg-brand-accent hover:bg-orange-600 text-white font-medium h-12 px-6 text-lg">
@@ -37,11 +39,11 @@ const HeroSection = () => {
               <div className="flex justify-end">
                 <div className="bg-white rounded-tl-lg rounded-bl-lg rounded-tr-lg p-3 max-w-[80%] shadow-sm">
                   <p className="text-sm text-gray-800">
-                    Aqui está o PDF dos meus estudos para a prova
+                    Fala Note.IA! Tudo bom? Preciso que você guarde esse PDF de direito civil que vou usar na prova amanhã
                   </p>
                   <div className="mt-2 p-2 bg-gray-50 rounded-md flex items-center">
                     <div className="bg-red-500 text-white text-xs p-1 rounded">PDF</div>
-                    <span className="text-xs ml-2">estudos_direito.pdf</span>
+                    <span className="text-xs ml-2">direito_civil_cap3.pdf</span>
                   </div>
                 </div>
               </div>
@@ -50,7 +52,7 @@ const HeroSection = () => {
               <div className="flex justify-start">
                 <div className="bg-white rounded-tr-lg rounded-br-lg rounded-bl-lg p-3 max-w-[80%] shadow-sm">
                   <p className="text-sm text-gray-800">
-                    Que PDF de estudos massa, Lucas! 😉 Guardei para você. Deseja que eu categorize em alguma pasta específica?
+                    Oi Lucas! Tudo ótimo 😊 Guardei seu PDF de direito civil no tema "Estudos > Direito". Boa sorte na prova amanhã! Precisa que eu destaque algo importante desse material?
                   </p>
                 </div>
               </div>
@@ -59,7 +61,7 @@ const HeroSection = () => {
               <div className="flex justify-end">
                 <div className="bg-white rounded-tl-lg rounded-bl-lg rounded-tr-lg p-3 max-w-[80%] shadow-sm">
                   <p className="text-sm text-gray-800">
-                    Cadê meu PDF de direito civil?
+                    Note, me mostra aquele artigo sobre posse e propriedade que guardei semana passada
                   </p>
                 </div>
               </div>
@@ -68,11 +70,11 @@ const HeroSection = () => {
               <div className="flex justify-start">
                 <div className="bg-white rounded-tr-lg rounded-br-lg rounded-bl-lg p-3 max-w-[80%] shadow-sm">
                   <p className="text-sm text-gray-800">
-                    Aqui está o PDF de direito civil que você pediu:
+                    Encontrei! Aqui está o artigo sobre posse e propriedade que você salvou na quinta-feira:
                   </p>
                   <div className="mt-2 p-2 bg-gray-50 rounded-md flex items-center">
-                    <div className="bg-red-500 text-white text-xs p-1 rounded">PDF</div>
-                    <span className="text-xs ml-2">direito_civil_2023.pdf</span>
+                    <div className="bg-blue-500 text-white text-xs p-1 rounded">LINK</div>
+                    <span className="text-xs ml-2">artigo_posse_propriedade.url</span>
                   </div>
                 </div>
               </div>

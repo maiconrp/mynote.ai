@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import HowItWorks from "@/components/HowItWorks";
 import Features from "@/components/Features";
+import UseExamplesCarousel from "@/components/UseExamplesCarousel";
 import UseCases from "@/components/UseCases";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
@@ -18,6 +19,7 @@ const Index = () => {
         <HeroSection />
         <HowItWorks />
         <Features />
+        <UseExamplesCarousel />
         <UseCases />
         <Pricing />
         <FAQ />
