@@ -15,14 +15,14 @@ const Features = () => {
       icon: <Search className="h-8 w-8 text-brand-blue" />,
       title: "Busca Conversacional em Linguagem Natural",
       description:
-        "Chega de comandos complexos ou buscas frustradas. Converse com a mynote.ia como falaria com um amigo: "Cadê aquele documento de aluguel?", "Me mostra o link daquele restaurante italiano" ou "Quero ver a foto da reunião de ontem".",
+        "Chega de comandos complexos ou buscas frustradas. Converse com a mynote.ia como falaria com um amigo: \"Cadê aquele documento de aluguel?\", \"Me mostra o link daquele restaurante italiano\" ou \"Quero ver a foto da reunião de ontem\".",
       pills: ["Perguntas em Linguagem Natural", "Busca Contextual", "Zero Esforço"]
     },
     {
       icon: <FolderOpen className="h-8 w-8 text-brand-blue" />,
       title: "Organização Automática e Inteligente",
       description:
-        "A mynote.ia categoriza automaticamente tudo que você envia. PDFs de trabalho vão para a pasta "Profissional", receitas para "Culinária", documentos para "Importantes". Você pode criar suas próprias categorias ou deixar que nossa IA faça isso por você.",
+        "A mynote.ia categoriza automaticamente tudo que você envia. PDFs de trabalho vão para a pasta \"Profissional\", receitas para \"Culinária\", documentos para \"Importantes\". Você pode criar suas próprias categorias ou deixar que nossa IA faça isso por você.",
       pills: ["Categorização Automática", "Pastas Personalizadas", "Tags Inteligentes"]
     },
     {

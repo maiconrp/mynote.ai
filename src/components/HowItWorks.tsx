@@ -20,7 +20,7 @@ const HowItWorks = () => {
       icon: <Search className="h-8 w-8 text-brand-accent" />,
       title: "PERGUNTE E ENCONTRE",
       description:
-        "Precisa de algo? Pergunte naturalmente: "Note, cadê aquele documento de trabalho?" e receba exatamente o que precisa.",
+        "Precisa de algo? Pergunte naturalmente: \"Note, cadê aquele documento de trabalho?\" e receba exatamente o que precisa.",
     },
   ];
 

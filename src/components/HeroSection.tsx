@@ -52,7 +52,7 @@ const HeroSection = () => {
               <div className="flex justify-start">
                 <div className="bg-white rounded-tr-lg rounded-br-lg rounded-bl-lg p-3 max-w-[80%] shadow-sm">
                   <p className="text-sm text-gray-800">
-                    Oi Lucas! Tudo ótimo 😊 Guardei seu PDF de direito civil no tema "Estudos > Direito". Boa sorte na prova amanhã! Precisa que eu destaque algo importante desse material?
+                    Oi Lucas! Tudo ótimo 😊 Guardei seu PDF de direito civil no tema "Estudos &gt; Direito". Boa sorte na prova amanhã! Precisa que eu destaque algo importante desse material?
                   </p>
                 </div>
               </div>
