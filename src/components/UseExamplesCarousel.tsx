@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { 
   Carousel, 
@@ -16,12 +15,12 @@ const UseExamplesCarousel = () => {
 
   const examples = [
     {
-      title: "Armazenamento Inteligente de PDFs",
+      title: "Armazenamento Inteligente",
       icon: <FileText className="h-8 w-8 text-red-500" />,
       conversation: [
         {
           user: true,
-          text: "Oi Note, preciso guardar esse artigo científico",
+          text: "Oi Note, guarda este artigo",
           attachment: {
             type: "PDF",
             name: "artigo_neurociencia.pdf"
@@ -29,17 +28,17 @@ const UseExamplesCarousel = () => {
         },
         {
           user: false,
-          text: "Guardado, Camila! Adicionei à sua pasta de pesquisa acadêmica.",
+          text: "Artigo guardado! Adicionei à sua pasta de pesquisa.",
         }
       ]
     },
     {
-      title: "Organização de Receitas Culinárias",
+      title: "Organização de Imagens",
       icon: <FileImage className="h-8 w-8 text-green-500" />,
       conversation: [
         {
           user: true,
-          text: "Oi Note, guarda essa receita de risoto",
+          text: "Guarda esta receita",
           attachment: {
             type: "IMAGEM",
             name: "receita_risoto.jpg"
@@ -47,17 +46,17 @@ const UseExamplesCarousel = () => {
         },
         {
           user: false,
-          text: "Receita salva, Marcos! Adicionei à sua coleção de receitas italianas.",
+          text: "Receita salva na coleção de culinária!",
         }
       ]
     },
     {
-      title: "Gestão de Contatos Profissionais",
+      title: "Gestão de Contatos",
       icon: <Search className="h-8 w-8 text-blue-500" />,
       conversation: [
         {
           user: true,
-          text: "Note, guarda o contato dessa cliente",
+          text: "Guarda o contato desta cliente",
           attachment: {
             type: "CONTATO",
             name: "Ana Ferreira - Marketing"
@@ -65,17 +64,17 @@ const UseExamplesCarousel = () => {
         },
         {
           user: false,
-          text: "Contato da Ana Ferreira salvo na categoria 'Clientes Potenciais'!",
+          text: "Contato salvo em 'Clientes'!",
         }
       ]
     },
     {
-      title: "Catalogação de Áudios de Aula",
+      title: "Catalogação de Áudios",
       icon: <FileAudio className="h-8 w-8 text-purple-500" />,
       conversation: [
         {
           user: true,
-          text: "Note, esse é o áudio da aula de psicologia",
+          text: "Este é o áudio da aula",
           attachment: {
             type: "ÁUDIO",
             name: "aula_psicologia.mp3"
@@ -83,7 +82,7 @@ const UseExamplesCarousel = () => {
         },
         {
           user: false,
-          text: "Áudio catalogado em 'Estudos > Psicologia'!",
+          text: "Áudio catalogado em 'Estudos'!",
         }
       ]
     }
@@ -128,10 +127,10 @@ const UseExamplesCarousel = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-            Como as Pessoas Usam a mynote.ia
+            Veja a mynote.ia em Ação
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Veja exemplos reais de como nossa IA poderosa transforma a maneira como você interage com suas informações no WhatsApp.
+            Exemplos reais de como nossa IA transforma a maneira como você interage com suas informações no WhatsApp.
           </p>
         </div>
 
@@ -163,7 +162,7 @@ const UseExamplesCarousel = () => {
                     </h3>
                   </div>
                   
-                  <div className="bg-[#e5f7f0] rounded-lg p-4 max-w-md mx-auto h-[180px]">
+                  <div className="bg-[#e5f7f0] rounded-lg p-4 max-w-md mx-auto h-[180px] flex flex-col justify-center">
                     {example.conversation.map((msg, i) => renderMessage(msg, i))}
                   </div>
                 </Card>

@@ -20,15 +20,16 @@ const FinalCTA = () => {
         <p className="text-lg md:text-xl mb-10 opacity-90 max-w-2xl mx-auto">
           Chega de perder arquivos importantes, links valiosos ou mensagens essenciais em conversas intermináveis. A mynote.ia organiza tudo para você.
         </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-5 max-w-lg mx-auto">
-          <Button className="bg-white text-brand-blue hover:bg-gray-100 font-medium h-14 px-8 text-lg">
+        <div className="flex flex-col sm:flex-row justify-center gap-5">
+          <Button className="bg-white text-brand-blue hover:bg-gray-100 font-medium h-14 px-8 text-lg w-full sm:w-auto">
             Experimente mynote.ia Grátis
           </Button>
-          <Button variant="outline" className="border-white text-white hover:bg-white/10 font-medium h-14 px-8 text-lg">
+          <Button variant="outline" className="border-white text-white hover:bg-white/10 font-medium h-14 px-8 text-lg w-full sm:w-auto">
             Ver Planos
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
+        <p className="text-white/80 text-sm mt-4">Sem cartão de crédito | Cancele quando quiser</p>
       </div>
     </section>
   );
