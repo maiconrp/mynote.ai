@@ -163,9 +163,14 @@ const UseExamplesCarousel = () => {
                     </h3>
                   </div>
                   
-                  <div className="bg-[#e5f7f0] rounded-lg p-4 flex-grow flex flex-col justify-center h-[180px]">
-                    {example.conversation.map((msg, i) => renderMessage(msg, i))}
+                  <div className="bg-[#e5f7f0] rounded-lg p-4 flex-grow flex flex-col justify-between min-h-[200px]">
+                    <div className="flex flex-col space-y-4">
+                      {example.conversation.map((msg, i) => renderMessage(msg, i))}
+                    </div>
                   </div>
+                  
+                  {/* Espaço adicional abaixo do conteúdo da conversação */}
+                  <div className="mt-4"></div>
                 </Card>
               </CarouselItem>
             ))}
