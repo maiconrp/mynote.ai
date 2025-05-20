@@ -183,7 +183,7 @@ const UseExamplesCarousel = () => {
         >
           <CarouselContent className="-ml-4 md:-ml-6">
             {examples.map((example, index) => (
-              <CarouselItem key={index} className="pl-4 md:pl-6 md:basis-1/3 lg:basis-1/3">
+              <CarouselItem key={index} className="pl-4 md:pl-6 basis-full md:basis-1/2 lg:basis-1/3">
                 <Card className={`bg-white p-6 md:p-8 rounded-xl border ${
                   current === index 
                     ? "border-brand-blue shadow-lg scale-105 transition-all duration-300" 
