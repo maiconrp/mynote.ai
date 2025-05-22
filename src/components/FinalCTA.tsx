@@ -5,7 +5,27 @@ import { ArrowRight } from "lucide-react";
 
 const FinalCTA = () => {
   return (
-    <section className="py-20 md:py-28 px-8 md:px-16 bg-gradient-to-br from-brand-blue to-blue-700 text-white relative overflow-hidden">
+    <>
+      <section className="py-20 md:py-28 px-8 md:px-16 bg-gradient-to-br from-brand-blue to-blue-700 text-white relative overflow-hidden" data-aos="fade-up">
+      <style>{`
+        @keyframes pulse-animation {
+          0% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          50% {
+            transform: scale(1.05);
+            opacity: 0.8;
+          }
+          100% {
+            transform: scale(1);
+            opacity: 1;
+          }
+        }
+        .animate-pulse-btn {
+          animation: pulse-animation 2s infinite;
+        }
+      `}</style>
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-1/4 w-64 h-64 bg-white opacity-5 rounded-full"></div>
@@ -32,6 +52,7 @@ const FinalCTA = () => {
         <p className="text-white/80 text-sm mt-4">Sem cartão de crédito | Cancele quando quiser</p>
       </div>
     </section>
+    </>
   );
 };
 

@@ -1,85 +1,125 @@
-
 import React from "react";
-import { Send, Brain, Search } from "lucide-react";
+import { Send, Brain, SearchCheck, MessageSquareText, Bot, User } from "lucide-react"; // Adicionando ícones para os balões
+
+// Supondo que suas cores de marca estejam definidas como variáveis CSS ou no Tailwind config
+// Ex: text-primary, bg-primary-light, etc.
 
 const HowItWorks = () => {
   const steps = [
     {
-      icon: <Send className="h-8 w-8 text-brand-blue" />,
-      title: "ENVIE",
+      icon: <Send className="h-7 w-7 text-[hsl(var(--primary))]" />,
+      title: "Você Envia, Simples Assim",
       description:
-        "Adicione mynote.ia como um contato e mande qualquer coisa: PDFs, links, áudios, textos, imagens...",
+        "Adicione a mynote.ia como um contato e envie qualquer tipo de arquivo ou mensagem que quiser guardar. Sem complicação.",
+      chatExample: [
+        { from: "user", text: "Guarda pra mim: Link do artigo sobre IA generativa que achei hoje!" },
+        { from: "user_file", fileName: "artigo_ia_gen.url", fileType: "LINK" }
+      ],
     },
     {
-      icon: <Brain className="h-8 w-8 text-brand-green" />,
-      title: "mynote.ia ORGANIZA",
+      icon: <Brain className="h-7 w-7 text-green-500" />,
+      title: "A My Note IA Entra em Ação",
       description:
-        "Nossa IA poderosa entende, cataloga e armazena suas informações automaticamente com categorização inteligente.",
+        "A mynote.ia analisa, entende o contexto e cataloga tudo automaticamente para você, de forma inteligente e organizada.",
+      chatExample: [
+        { from: "ia", text: 'Entendido, chefia! 😉 Seu link "artigo_ia_gen.url" foi salvo e categorizado como "Tecnologia > IA".' }
+      ],
     },
     {
-      icon: <Search className="h-8 w-8 text-brand-accent" />,
-      title: "PERGUNTE E ENCONTRE",
+      icon: <SearchCheck className="h-7 w-7 text-orange-500" />,
+      title: "Encontre Tudo Rapidinho",
       description:
-        "Precisa de algo? Pergunte naturalmente: \"Note, cadê aquele documento de trabalho?\" e receba exatamente o que precisa.",
+        "Precisa de algo? É só perguntar em linguagem natural. A mynote.ia busca e traz exatamente o que você precisa, em segundos.",
+      chatExample: [
+        { from: "user", text: "Note, qual foi o último link sobre IA que te mandei?" },
+        { from: "ia_file", fileName: "artigo_ia_gen.url", fileType: "LINK", message: "Claro! Foi este aqui:" }
+      ],
     },
   ];
 
+  // Cores dos balões de chat
+  const userBubbleColor = "bg-emerald-500 dark:bg-emerald-600 text-white";
+  const iaBubbleColor = "bg-slate-200 dark:bg-zinc-700 text-slate-800 dark:text-slate-200";
+  const attachmentBgColorUser = "bg-emerald-400/30 dark:bg-emerald-500/40 border-emerald-400/50 dark:border-emerald-500/60";
+  const attachmentTagColorUser = "bg-emerald-600 dark:bg-emerald-700 text-white"; // Para tags dentro do balão verde
+  const attachmentTextColorUser = "text-emerald-50 dark:text-emerald-100/90";
+
+  const attachmentBgColorIa = "bg-slate-100 dark:bg-zinc-600 border-slate-200 dark:border-zinc-500";
+  const attachmentTagColorIa = "bg-slate-500 dark:bg-zinc-500 text-white"; // Para tags dentro do balão cinza
+  const attachmentTextColorIa = "text-slate-700 dark:text-slate-300";
+
+
   return (
-    <section id="como-funciona" className="py-20 md:py-28 px-8 md:px-16 bg-slate-50">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-            Organização Mágica em 3 Passos Simples
+    <section id="como-funciona" className="py-20 md:py-28 bg-gray-100 dark:bg-zinc-900">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16 md:mb-20">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+            Organização Inteligente em <span className="text-[hsl(var(--primary))]">3 Passos</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            A mynote.ia transforma como você gerencia informações no WhatsApp, sem esforço e com total inteligência.
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Veja como é fácil transformar seu WhatsApp em um assistente pessoal com a mynote.ia.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-10"> {/* Ajustado gap */}
           {steps.map((step, index) => (
             <div
               key={index}
-              className="bg-white p-10 rounded-xl border border-gray-100 shadow-md transition-all hover:shadow-blue relative overflow-hidden"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+              className="bg-slate-50 dark:bg-zinc-800 p-6 md:p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 flex flex-col"
             >
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-blue-50 rounded-full opacity-80"></div>
-              <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mb-8 mx-auto relative z-10 shadow-sm">
-                {step.icon}
+              {/* Cabeçalho do Passo */}
+              <div className="flex items-center mb-6">
+                <div className={`flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center mr-4
+                  ${index === 0 ? 'bg-blue-100 dark:bg-blue-500/20' : index === 1 ? 'bg-green-100 dark:bg-green-500/20' : 'bg-orange-100 dark:bg-orange-500/20'}
+                `}>
+                  {step.icon}
+                </div>
+                <h3 className="text-xl lg:text-2xl font-semibold text-gray-800 dark:text-gray-200 leading-tight">
+                  {step.title}
+                </h3>
               </div>
-              <h3 className="text-xl font-bold mb-4 text-center text-gray-900 relative z-10">
-                {step.title}
-              </h3>
-              <p className="text-gray-600 text-center relative z-10">{step.description}</p>
               
-              {index === 0 && (
-                <div className="mt-8 bg-gray-50 p-4 rounded-lg text-sm text-center shadow-sm relative z-10">
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <div className="h-8 w-8 bg-green-500 rounded-full flex items-center justify-center">
-                      <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                      </svg>
+              <p className="text-gray-700 dark:text-gray-300 text-base mb-6 flex-grow">{step.description}</p>
+
+              {/* Mockup de Chat Minimalista */}
+              {step.chatExample && (
+                <div className="mt-auto pt-4 border-t border-slate-200 dark:border-zinc-700 space-y-2.5">
+                  {step.chatExample.map((msg, msgIdx) => (
+                    <div key={msgIdx} className={`flex ${msg.from === "user" || msg.from === "user_file" ? "justify-end" : "justify-start"}`}>
+                      <div className={`p-2.5 rounded-lg shadow-sm max-w-[90%] ${msg.from === "user" || msg.from === "user_file" ? userBubbleColor + " rounded-tr-none" : iaBubbleColor + " rounded-tl-none"}`}>
+                        {/* Mensagem de texto normal */}
+                        {(msg.from === "user" || msg.from === "ia") && <p className="text-sm break-words">{msg.text}</p>}
+                        
+                        {/* Anexo do Usuário */}
+                        {msg.from === "user_file" && (
+                          <div>
+                            {msg.text && <p className="text-sm break-words mb-1.5">{msg.text}</p> } {/* Texto opcional antes do anexo */}
+                            <div className={`p-1.5 rounded-md flex items-center text-xs ${attachmentBgColorUser}`}>
+                              <div className={`font-semibold p-0.5 px-1.5 rounded mr-1.5 text-xs ${attachmentTagColorUser}`}>
+                                {msg.fileType}
+                              </div>
+                              <span className={`break-all ${attachmentTextColorUser}`}>{msg.fileName}</span>
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Anexo da IA */}
+                        {msg.from === "ia_file" && (
+                           <div>
+                            {msg.message && <p className="text-sm break-words mb-1.5">{msg.message}</p> }
+                            <div className={`p-1.5 rounded-md flex items-center text-xs ${attachmentBgColorIa}`}>
+                              <div className={`font-semibold p-0.5 px-1.5 rounded mr-1.5 text-xs ${attachmentTagColorIa}`}>
+                                {msg.fileType}
+                              </div>
+                              <span className={`break-all ${attachmentTextColorIa}`}>{msg.fileName}</span>
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     </div>
-                    <span className="font-medium">Adicionar Contato</span>
-                  </div>
-                  <span className="font-medium text-brand-blue">mynote.ia</span> <br />
-                  <span className="text-gray-500">no WhatsApp</span>
-                </div>
-              )}
-              
-              {index === 1 && (
-                <div className="mt-8 bg-gray-50 p-4 rounded-lg text-sm shadow-sm text-center relative z-10 border-l-4 border-brand-green">
-                  <p className="text-gray-500 font-medium">
-                    "Entendido! Seu PDF sobre investimentos foi salvo na categoria <span className="text-brand-green">Finanças</span> para fácil acesso."
-                  </p>
-                </div>
-              )}
-              
-              {index === 2 && (
-                <div className="mt-8 bg-gray-50 p-4 rounded-lg shadow-sm text-center relative z-10 space-y-2">
-                  <p className="text-gray-500 text-xs">Você pergunta:</p>
-                  <p className="text-brand-blue font-medium text-sm">"Note, cadê aquela receita de bolo que salvei?"</p>
-                  <p className="text-gray-500 text-xs">mynote.ia responde:</p>
-                  <p className="text-brand-accent font-medium text-sm">"Encontrei! Aqui está a receita de bolo de cenoura que você salvou na terça:"</p>
+                  ))}
                 </div>
               )}
             </div>

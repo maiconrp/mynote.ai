@@ -1,5 +1,5 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,108 +8,140 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 200 98% 39%;
+    --primary: 200 98% 39%; 
     --primary-foreground: 210 40% 98%;
-
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 24.6 95% 53.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    --accent: 24.6 95% 53.1%; 
+    --accent-foreground: 210 40% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
-
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
+  .dark { /* Definindo variáveis para dark mode */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
+    --primary: 210 40% 98%; 
+    --primary-foreground: 222.2 47.4% 11.2%; 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 24.6 95% 53.1%; 
     --accent-foreground: 210 40% 98%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground font-inter;
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-poppins font-semibold;
-  }
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground font-inter; font-feature-settings: "rlig" 1, "calt" 1; }
+  h1, h2, h3, h4, h5, h6 { @apply font-poppins font-semibold; }
 }
 
 @layer utilities {
-  .font-inter {
-    font-family: 'Inter', sans-serif;
+  .font-inter { font-family: 'Inter', sans-serif; }
+  .font-poppins { font-family: 'Poppins', sans-serif; }
+  .shadow-blue { box-shadow: 0 0 25px rgba(2, 132, 199, 0.2); }
+
+  /* --- ANIMAÇÕES --- */
+  @keyframes pulse-glow-animation { /* Renomeado para clareza */
+    0%, 100% { box-shadow: 0 0 6px 0px hsla(var(--btn-glow-color), 0.4); }
+    50% { box-shadow: 0 0 20px 5px hsla(var(--btn-glow-color), 0.7), 0 0 30px 10px hsla(var(--btn-glow-color), 0.25); }
+  }
+
+  @keyframes rotate-border-animation {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  /* --- CLASSE BASE PARA O BOTÃO ANIMADO --- */
+  .btn-effect-wrapper {
+    @apply relative inline-flex items-center justify-center overflow-hidden transition-transform duration-200 ease-out rounded-md;
+    /* `isolate` cria um novo contexto de empilhamento, importante para z-index de pseudo-elementos */
+    isolation: isolate; 
+  }
+
+  .btn-effect-wrapper > * { /* Conteúdo do botão (texto, ícones) */
+    @apply relative z-20; /* Acima de todos os efeitos de fundo/borda */
+  }
+
+  /* GLOW PULSANTE DE FUNDO (usando ::before) */
+  .btn-effect-wrapper::before {
+    content: "";
+    @apply absolute inset-0 rounded-md opacity-0 pointer-events-none;
+    /* A animação será aplicada no hover */
+    z-index: -2; /* Atrás do conteúdo e da borda giratória */
+  }
+
+  .btn-effect-wrapper:hover::before {
+    opacity: 1;
+    animation: pulse-glow-animation 2s infinite ease-in-out;
+    /* A cor é controlada pela variável --btn-glow-color definida no :hover do .btn-effect-wrapper */
   }
   
-  .font-poppins {
-    font-family: 'Poppins', sans-serif;
+  /* BORDA GIRATÓRIA (usando ::after) */
+  .btn-effect-wrapper::after {
+    content: "";
+    @apply absolute top-1/2 left-1/2 w-[calc(100%+10px)] h-[calc(100%+10px)] opacity-0 pointer-events-none;
+    /* w/h maiores para a borda aparecer "ao redor". Ajuste `10px` para espessura/distância. */
+    /* O `rounded-md` no pai `.btn-effect-wrapper` deve arredondar isso também se overflow for hidden, */
+    /* mas como o overflow é para a faixa de brilho, o arredondamento do ::after pode precisar ser explícito se o ::after for maior */
+    border-radius: inherit; /* Tenta herdar o border-radius do botão */
+    background-image: conic-gradient(
+      from 0deg at 50% 50%,
+      transparent 0%,
+      transparent 240deg, /* Ponto onde o brilho começa a se formar (maior parte transparente) */
+      hsla(var(--btn-glow-color), 0.8) 260deg, /* Cor e intensidade do brilho da borda */
+      hsla(var(--btn-glow-color), 0.8) 280deg,
+      transparent 300deg, /* Ponto onde o brilho termina */
+      transparent 360deg
+    );
+    z-index: -1; /* Entre o glow de fundo e o conteúdo */
+    /* A animação será aplicada no hover */
+  }
+
+  .btn-effect-wrapper:hover::after {
+    opacity: 1;
+    animation: rotate-border-animation 2.5s linear infinite; /* Duração da rotação */
+  }
+
+  /* EFEITOS GERAIS NO HOVER DO BOTÃO */
+  .btn-effect-wrapper:hover {
+    transform: translateY(-2px); /* Efeito de levantar */
+    /* Define a cor base para as animações de glow e borda */
+    --btn-glow-color: var(--primary); /* Padrão para cor primária */
   }
   
-  .shadow-blue {
-    box-shadow: 0 0 25px rgba(2, 132, 199, 0.2);
+  /* VARIANTE DE ACENTO */
+  .btn-effect-wrapper-accent:hover {
+    --btn-glow-color: var(--accent); /* Sobrescreve para cor de acento */
   }
+
+  .btn-effect-wrapper:hover > * {
+    color: hsl(var(--secondary-foreground));
+  }
+
+
+  /* --- Animação de flutuação (opcional) --- */
+  @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+  .animate-float { animation: float 6s ease-in-out infinite; }
 }

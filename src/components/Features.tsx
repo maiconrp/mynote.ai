@@ -5,31 +5,31 @@ import { Brain, Search, FolderOpen, Shield, FileText, FileImage, FileAudio } fro
 const Features = () => {
   const features = [
     {
-      icon: <Brain className="h-8 w-8 text-brand-blue" />,
-      title: "Inteligência Artificial que Realmente Entende Você",
+      icon: <Brain className="h-8 w-8 text-blue-600" />, // Usando uma cor Tailwind válida
+      title: "Sua IA que REALMENTE te entende (ufa!)",
       description:
-        "Nossa IA avançada não apenas armazena, mas compreende o contexto dos seus arquivos. Ela analisa PDFs, reconhece imagens, transcreve áudios e extrai informações importantes para você encontrar tudo facilmente depois.",
+        "Ninguém merece uma IA que não saca nada, né? A mynote.ia manja de tudo: arquivos, fotos, áudios... Sério, ela entende o recado!",
       pills: ["Compreensão de Contexto", "Análise de Documentos", "Extração de Informações"]
     },
     {
-      icon: <Search className="h-8 w-8 text-brand-blue" />,
-      title: "Busca Conversacional em Linguagem Natural",
+      icon: <Search className="h-8 w-8 text-blue-600" />,
+      title: "Ache TUDO só na conversa (tipo zap!)",
       description:
-        "Chega de comandos complexos ou buscas frustradas. Converse com a mynote.ia como falaria com um amigo: \"Cadê aquele documento de aluguel?\", \"Me mostra o link daquele restaurante italiano\" ou \"Quero ver a foto da reunião de ontem\".",
+        "Esquece os comandos de ET! Manda um \"cadê meu PDF?\" ou \"link daquela receita daora\" e a mynote.ia resolve. Simples assim!",
       pills: ["Perguntas em Linguagem Natural", "Busca Contextual", "Zero Esforço"]
     },
     {
-      icon: <FolderOpen className="h-8 w-8 text-brand-blue" />,
-      title: "Organização Automática e Inteligente",
+      icon: <FolderOpen className="h-8 w-8 text-blue-600" />,
+      title: "Organização? Deixa com ela (mágica!)",
       description:
-        "A mynote.ia categoriza automaticamente tudo que você envia. PDFs de trabalho vão para a pasta \"Profissional\", receitas para \"Culinária\", documentos para \"Importantes\". Você pode criar suas próprias categorias ou deixar que nossa IA faça isso por você.",
+        "Jogou um arquivo? A mynote.ia já sabe onde guardar. Trabalho na pasta 'Jobs', rango na 'Larica'. Ou crie suas pastas, você que manda!",
       pills: ["Categorização Automática", "Pastas Personalizadas", "Tags Inteligentes"]
     },
     {
-      icon: <Shield className="h-8 w-8 text-brand-blue" />,
-      title: "Privacidade e Segurança de Ponta a Ponta",
+      icon: <Shield className="h-8 w-8 text-blue-600" />,
+      title: "Seus segredos? Blindados e só seus!",
       description:
-        "Seus dados são exclusivamente seus. A mynote.ia utiliza criptografia avançada para proteger todas as suas informações. Você tem controle total sobre o que é armazenado e pode excluir qualquer coisa a qualquer momento.",
+        "Relaxa, seus arquivos estão mais seguros que Fort Knox. Criptografia top, controle total na sua mão e delete o que quiser, quando quiser. Privacidade é lei!",
       pills: ["Criptografia Avançada", "Controle Total", "Sem Compartilhamento de Dados"]
     },
   ];
@@ -48,10 +48,12 @@ const Features = () => {
 
         <div className="grid md:grid-cols-2 gap-x-10 gap-y-16">
           {features.map((feature, index) => (
-            <div key={index} className="bg-white p-8 rounded-xl border border-gray-100 shadow-md hover:shadow-blue transition-all">
+            <div key={index} className="bg-white p-8 rounded-xl border border-gray-100 shadow-md hover:shadow-blue transition-all" data-aos={index % 2 === 0 ? "fade-right" : "fade-left"} data-aos-delay={index * 150}>
               <div className="flex gap-6 mb-4">
                 <div className="bg-blue-50 rounded-xl p-4 h-fit">
                   {feature.icon}
+                </div>
+                <div data-aos={index % 2 === 0 ? "fade-right" : "fade-left"} data-aos-delay={index * 150}>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-3 text-gray-900">
